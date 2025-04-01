@@ -1,0 +1,425 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ID
+    STRING
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement statement_list
+Rule 3     statement_list -> statement
+Rule 4     statement -> reserve_statement
+Rule 5     statement -> confirm_statement
+Rule 6     statement -> pay_statement
+Rule 7     statement -> cancel_statement
+Rule 8     statement -> show_available_statement
+Rule 9     statement -> show_bookings_statement
+Rule 10    reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER
+Rule 11    confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE
+Rule 12    pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD
+Rule 13    cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE
+Rule 14    show_available_statement -> SHOW AVAILABLE TICKET_TYPE
+Rule 15    show_bookings_statement -> SHOW BOOKINGS
+
+Terminals, with rules where they appear
+
+AVAILABLE            : 14
+BOOKING              : 11 12 13
+BOOKINGS             : 15
+BOOKING_REFERENCE    : 11 12 13
+CANCEL               : 13
+CONFIRM              : 11
+DATE                 : 10
+EVENT_NAME           : 10
+FOR                  : 10 12
+ID                   : 
+INTEGER              : 10
+ON                   : 10
+PAY                  : 12
+PAYMENT_METHOD       : 12
+QUANTITY             : 10
+RESERVE              : 10
+SHOW                 : 14 15
+STRING               : 
+TICKET_TYPE          : 10 14
+USING                : 12
+error                : 
+
+Nonterminals, with rules where they appear
+
+cancel_statement     : 7
+confirm_statement    : 5
+pay_statement        : 6
+program              : 0
+reserve_statement    : 4
+show_available_statement : 8
+show_bookings_statement : 9
+statement            : 2 3
+statement_list       : 1 2
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement statement_list
+    (3) statement_list -> . statement
+    (4) statement -> . reserve_statement
+    (5) statement -> . confirm_statement
+    (6) statement -> . pay_statement
+    (7) statement -> . cancel_statement
+    (8) statement -> . show_available_statement
+    (9) statement -> . show_bookings_statement
+    (10) reserve_statement -> . RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER
+    (11) confirm_statement -> . CONFIRM BOOKING BOOKING_REFERENCE
+    (12) pay_statement -> . PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD
+    (13) cancel_statement -> . CANCEL BOOKING BOOKING_REFERENCE
+    (14) show_available_statement -> . SHOW AVAILABLE TICKET_TYPE
+    (15) show_bookings_statement -> . SHOW BOOKINGS
+
+    RESERVE         shift and go to state 10
+    CONFIRM         shift and go to state 11
+    PAY             shift and go to state 12
+    CANCEL          shift and go to state 13
+    SHOW            shift and go to state 14
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    reserve_statement              shift and go to state 4
+    confirm_statement              shift and go to state 5
+    pay_statement                  shift and go to state 6
+    cancel_statement               shift and go to state 7
+    show_available_statement       shift and go to state 8
+    show_bookings_statement        shift and go to state 9
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+
+    $end            reduce using rule 1 (program -> statement_list .)
+
+
+state 3
+
+    (2) statement_list -> statement . statement_list
+    (3) statement_list -> statement .
+    (2) statement_list -> . statement statement_list
+    (3) statement_list -> . statement
+    (4) statement -> . reserve_statement
+    (5) statement -> . confirm_statement
+    (6) statement -> . pay_statement
+    (7) statement -> . cancel_statement
+    (8) statement -> . show_available_statement
+    (9) statement -> . show_bookings_statement
+    (10) reserve_statement -> . RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER
+    (11) confirm_statement -> . CONFIRM BOOKING BOOKING_REFERENCE
+    (12) pay_statement -> . PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD
+    (13) cancel_statement -> . CANCEL BOOKING BOOKING_REFERENCE
+    (14) show_available_statement -> . SHOW AVAILABLE TICKET_TYPE
+    (15) show_bookings_statement -> . SHOW BOOKINGS
+
+    $end            reduce using rule 3 (statement_list -> statement .)
+    RESERVE         shift and go to state 10
+    CONFIRM         shift and go to state 11
+    PAY             shift and go to state 12
+    CANCEL          shift and go to state 13
+    SHOW            shift and go to state 14
+
+    statement                      shift and go to state 3
+    statement_list                 shift and go to state 15
+    reserve_statement              shift and go to state 4
+    confirm_statement              shift and go to state 5
+    pay_statement                  shift and go to state 6
+    cancel_statement               shift and go to state 7
+    show_available_statement       shift and go to state 8
+    show_bookings_statement        shift and go to state 9
+
+state 4
+
+    (4) statement -> reserve_statement .
+
+    RESERVE         reduce using rule 4 (statement -> reserve_statement .)
+    CONFIRM         reduce using rule 4 (statement -> reserve_statement .)
+    PAY             reduce using rule 4 (statement -> reserve_statement .)
+    CANCEL          reduce using rule 4 (statement -> reserve_statement .)
+    SHOW            reduce using rule 4 (statement -> reserve_statement .)
+    $end            reduce using rule 4 (statement -> reserve_statement .)
+
+
+state 5
+
+    (5) statement -> confirm_statement .
+
+    RESERVE         reduce using rule 5 (statement -> confirm_statement .)
+    CONFIRM         reduce using rule 5 (statement -> confirm_statement .)
+    PAY             reduce using rule 5 (statement -> confirm_statement .)
+    CANCEL          reduce using rule 5 (statement -> confirm_statement .)
+    SHOW            reduce using rule 5 (statement -> confirm_statement .)
+    $end            reduce using rule 5 (statement -> confirm_statement .)
+
+
+state 6
+
+    (6) statement -> pay_statement .
+
+    RESERVE         reduce using rule 6 (statement -> pay_statement .)
+    CONFIRM         reduce using rule 6 (statement -> pay_statement .)
+    PAY             reduce using rule 6 (statement -> pay_statement .)
+    CANCEL          reduce using rule 6 (statement -> pay_statement .)
+    SHOW            reduce using rule 6 (statement -> pay_statement .)
+    $end            reduce using rule 6 (statement -> pay_statement .)
+
+
+state 7
+
+    (7) statement -> cancel_statement .
+
+    RESERVE         reduce using rule 7 (statement -> cancel_statement .)
+    CONFIRM         reduce using rule 7 (statement -> cancel_statement .)
+    PAY             reduce using rule 7 (statement -> cancel_statement .)
+    CANCEL          reduce using rule 7 (statement -> cancel_statement .)
+    SHOW            reduce using rule 7 (statement -> cancel_statement .)
+    $end            reduce using rule 7 (statement -> cancel_statement .)
+
+
+state 8
+
+    (8) statement -> show_available_statement .
+
+    RESERVE         reduce using rule 8 (statement -> show_available_statement .)
+    CONFIRM         reduce using rule 8 (statement -> show_available_statement .)
+    PAY             reduce using rule 8 (statement -> show_available_statement .)
+    CANCEL          reduce using rule 8 (statement -> show_available_statement .)
+    SHOW            reduce using rule 8 (statement -> show_available_statement .)
+    $end            reduce using rule 8 (statement -> show_available_statement .)
+
+
+state 9
+
+    (9) statement -> show_bookings_statement .
+
+    RESERVE         reduce using rule 9 (statement -> show_bookings_statement .)
+    CONFIRM         reduce using rule 9 (statement -> show_bookings_statement .)
+    PAY             reduce using rule 9 (statement -> show_bookings_statement .)
+    CANCEL          reduce using rule 9 (statement -> show_bookings_statement .)
+    SHOW            reduce using rule 9 (statement -> show_bookings_statement .)
+    $end            reduce using rule 9 (statement -> show_bookings_statement .)
+
+
+state 10
+
+    (10) reserve_statement -> RESERVE . TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER
+
+    TICKET_TYPE     shift and go to state 16
+
+
+state 11
+
+    (11) confirm_statement -> CONFIRM . BOOKING BOOKING_REFERENCE
+
+    BOOKING         shift and go to state 17
+
+
+state 12
+
+    (12) pay_statement -> PAY . FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD
+
+    FOR             shift and go to state 18
+
+
+state 13
+
+    (13) cancel_statement -> CANCEL . BOOKING BOOKING_REFERENCE
+
+    BOOKING         shift and go to state 19
+
+
+state 14
+
+    (14) show_available_statement -> SHOW . AVAILABLE TICKET_TYPE
+    (15) show_bookings_statement -> SHOW . BOOKINGS
+
+    AVAILABLE       shift and go to state 20
+    BOOKINGS        shift and go to state 21
+
+
+state 15
+
+    (2) statement_list -> statement statement_list .
+
+    $end            reduce using rule 2 (statement_list -> statement statement_list .)
+
+
+state 16
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE . FOR EVENT_NAME ON DATE QUANTITY INTEGER
+
+    FOR             shift and go to state 22
+
+
+state 17
+
+    (11) confirm_statement -> CONFIRM BOOKING . BOOKING_REFERENCE
+
+    BOOKING_REFERENCE shift and go to state 23
+
+
+state 18
+
+    (12) pay_statement -> PAY FOR . BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD
+
+    BOOKING         shift and go to state 24
+
+
+state 19
+
+    (13) cancel_statement -> CANCEL BOOKING . BOOKING_REFERENCE
+
+    BOOKING_REFERENCE shift and go to state 25
+
+
+state 20
+
+    (14) show_available_statement -> SHOW AVAILABLE . TICKET_TYPE
+
+    TICKET_TYPE     shift and go to state 26
+
+
+state 21
+
+    (15) show_bookings_statement -> SHOW BOOKINGS .
+
+    RESERVE         reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+    CONFIRM         reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+    PAY             reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+    CANCEL          reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+    SHOW            reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+    $end            reduce using rule 15 (show_bookings_statement -> SHOW BOOKINGS .)
+
+
+state 22
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR . EVENT_NAME ON DATE QUANTITY INTEGER
+
+    EVENT_NAME      shift and go to state 27
+
+
+state 23
+
+    (11) confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .
+
+    RESERVE         reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+    CONFIRM         reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+    PAY             reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+    CANCEL          reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+    SHOW            reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+    $end            reduce using rule 11 (confirm_statement -> CONFIRM BOOKING BOOKING_REFERENCE .)
+
+
+state 24
+
+    (12) pay_statement -> PAY FOR BOOKING . BOOKING_REFERENCE USING PAYMENT_METHOD
+
+    BOOKING_REFERENCE shift and go to state 28
+
+
+state 25
+
+    (13) cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .
+
+    RESERVE         reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+    CONFIRM         reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+    PAY             reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+    CANCEL          reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+    SHOW            reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+    $end            reduce using rule 13 (cancel_statement -> CANCEL BOOKING BOOKING_REFERENCE .)
+
+
+state 26
+
+    (14) show_available_statement -> SHOW AVAILABLE TICKET_TYPE .
+
+    RESERVE         reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+    CONFIRM         reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+    PAY             reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+    CANCEL          reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+    SHOW            reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+    $end            reduce using rule 14 (show_available_statement -> SHOW AVAILABLE TICKET_TYPE .)
+
+
+state 27
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME . ON DATE QUANTITY INTEGER
+
+    ON              shift and go to state 29
+
+
+state 28
+
+    (12) pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE . USING PAYMENT_METHOD
+
+    USING           shift and go to state 30
+
+
+state 29
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON . DATE QUANTITY INTEGER
+
+    DATE            shift and go to state 31
+
+
+state 30
+
+    (12) pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING . PAYMENT_METHOD
+
+    PAYMENT_METHOD  shift and go to state 32
+
+
+state 31
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE . QUANTITY INTEGER
+
+    QUANTITY        shift and go to state 33
+
+
+state 32
+
+    (12) pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .
+
+    RESERVE         reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+    CONFIRM         reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+    PAY             reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+    CANCEL          reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+    SHOW            reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+    $end            reduce using rule 12 (pay_statement -> PAY FOR BOOKING BOOKING_REFERENCE USING PAYMENT_METHOD .)
+
+
+state 33
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY . INTEGER
+
+    INTEGER         shift and go to state 34
+
+
+state 34
+
+    (10) reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .
+
+    RESERVE         reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+    CONFIRM         reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+    PAY             reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+    CANCEL          reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+    SHOW            reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+    $end            reduce using rule 10 (reserve_statement -> RESERVE TICKET_TYPE FOR EVENT_NAME ON DATE QUANTITY INTEGER .)
+

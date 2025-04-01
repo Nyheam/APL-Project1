@@ -1,0 +1,6 @@
+show available concert
+reserve concert for "RockFest 2024" on (2024-12-20) quantity 2
+show bookings
+confirm booking "BOOKC7A9F2B1"
+pay for booking "BOOKC7A9F2B1" using credit card
+cancel booking "BOOKC7A9F2B1" 

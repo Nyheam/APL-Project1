@@ -1,7 +1,0 @@
-2025-03-23 17:12:20,323 - Starting DNA Pattern Detection
-2025-03-23 17:13:07,165 - Pattern: ATCG
-2025-03-23 17:13:07,165 - DFA-based matches: [0]
-2025-03-23 17:13:07,165 - Naive matches: [0]
-2025-03-23 17:13:07,165 - DFA time: 0.000000 seconds
-2025-03-23 17:13:07,165 - Naive time: 0.000000 seconds
-2025-03-23 17:13:07,165 - Completed analysis for DNA sequence: ATCG
